@@ -25,25 +25,23 @@ export default function PopUp() {
     const outsideRef = useRef()
     const iconref = useRef()
 
-    const  useOutsideAlerter = useCallback((ref,ref2) =>{
-        useEffect(() => {
-            /**
-             * Alert if clicked on outside of element
-             */
-            function handleClickOutside(event) {
-                if ((ref.current && !ref.current.contains(event.target)) && (ref2.current && !ref2.current.contains(event.target))) {
-                    console.log(true)
-                    close(false)
-                }
+    useEffect(() => {
+        /**
+         * Alert if clicked on outside of element
+         */
+        function handleClickOutside(event) {
+            if ((outsideRef.current && !outsideRef.current.contains(event.target)) && (iconref.current && !iconref.current.contains(event.target))) {
+                console.log(true)
+                close(false)
             }
-            // Bind the event listener
-            document.addEventListener("mousedown", handleClickOutside);
-            return () => {
-                // Unbind the event listener on clean up
-                document.removeEventListener("mousedown", handleClickOutside);
-            };
-        }, [ref]);
-    },[outsideRef,iconref])
+        }
+        // Bind the event listener
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            // Unbind the event listener on clean up
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [outsideRef,iconref]);
 
     useOutsideAlerter(outsideRef,iconref);
 
