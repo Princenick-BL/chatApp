@@ -43,7 +43,6 @@ export default function PopUp() {
         };
     }, [outsideRef,iconref]);
 
-    useOutsideAlerter(outsideRef,iconref);
 
     const messageRef = useRef()
     const containerRef = useRef()
