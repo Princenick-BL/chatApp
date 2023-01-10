@@ -44,7 +44,7 @@ export default function Home() {
         onNewUsers((err, data) => {
             setRooms(prev => (data?.user?.id !== user?.id ) ? [  ...new Map([...prev, data].map((item) => [item["name"], item])).values(), ]: prev);
         }); 
-    },['init'])
+    },[])
 
 
 
