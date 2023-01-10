@@ -1,0 +1,45 @@
+$color : rgb(46, 71, 93);
+
+.welcomeMsg{
+    width: max-content;
+    margin: 0 auto;
+    background-color: rgb(234, 240, 246);
+    color: rgb(66, 91, 118);
+    padding: 2px 1rem;
+    border-radius: 50px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.messageBox{
+    width: 100%;
+    display: flex;
+    max-width: 100%;
+    overflow: hidden;
+    .message{
+        width: max-content;
+        max-width: 80%;
+        height: max-content;
+        background-color: rgb(234, 240, 246);
+        color: rgb(66, 91, 118);
+        padding: .5rem;
+        margin:  .5rem 1rem;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        white-space: pre-wrap;
+        line-height: 1.5;
+    }
+
+}
+.active{
+    justify-content: flex-end;
+    .message{
+        border-top-left-radius: 5px;
+        border-bottom-right-radius: 0;
+        background: $color;
+        color: #fff;
+        white-space: pre-line;
+
+    }
+}

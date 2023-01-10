@@ -1,0 +1,176 @@
+$color : rgb(46, 71, 93);
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+  max-width: 100vw;
+
+  .left,.right{
+    height: 100vh;
+    input{
+      border: none;
+      height: 50px;
+      background: #dfdfdf;
+      font-size: 16px;
+      padding: 0 1rem;
+      border-radius: 5px;
+    }
+  }
+
+  .left{
+    background-color: #f3f3f3;
+    width: 30vw;
+    min-width: 300px;
+    max-width: 200px;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    .leftTop{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+      img{
+        border-radius: 50px;
+        border: 1px solid red;
+      }
+    }
+    .rooms{
+      margin-top: 1.5rem;
+      height: 100%;
+      max-height: 100%;
+      overflow-y: auto;
+      .room{
+        padding: 1rem 0;
+        border-top: 1px solid #ccc;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .right{
+    background-color:#fff;
+    width: 70%;
+    max-width:70%;
+    z-index: 300;
+    min-width: 450px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    .pop_up_top{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #282c34;
+        color: #fff;
+        max-height: 100px;
+        .top_left{
+            display: flex;
+            align-items: center;
+            img{
+                border: 1px solid #fff !important;
+                border-radius: 40px;
+            }
+            
+        }
+        .pop_up_close{
+            cursor: pointer;
+            svg{
+                fill: #fff;
+            }
+        }
+        .user_info{
+            margin-left: 1rem;
+            .user_name{
+                margin-bottom: 5px;
+                font-style: italic;
+            }
+            .user_status{
+                display: flex;
+                align-items: center;
+                font-size: 10px;
+                div:nth-child(1){
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 10px;
+                    margin-right: 5px;
+                    background-color: greenyellow;
+                }
+            }
+        }
+    }
+    .pop_up_content{
+        border-radius: 10px;   
+        padding: .5rem;
+        padding-right: 0;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        max-height: 100%;
+        overflow: hidden;
+        min-height: max-content;
+        height: 100%;
+        .pop_up_content_messages{
+            height: 100%;
+            max-height: 100%;
+            overflow-y: auto;
+            padding-right: .5rem;
+        }
+    }
+    .pop_up_bottom{
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: space-between;   
+        overflow: hidden;
+        padding: 1rem;
+        border-top: 1px solid #282c34;
+        align-items: center;
+        .textArea{
+            border-radius: 3px;
+            font-size: 16px;
+            line-height: 22px;
+            min-height: 40px;
+            max-height: 100px;
+            overflow: hidden auto;
+            padding: 8px;
+            position: relative;
+            width: 100%;
+            flex-basis: 100%;
+            word-break: break-word;
+            cursor: text;
+            border: medium none;
+            background-color: transparent;
+            max-width: 80%;
+            outline: none;
+
+        }
+        .textArea:empty:before {
+            display: block;
+            content: attr(placeholder);
+            position: relative;
+            color: rgb(123, 152, 182);
+            background-color: transparent;
+            cursor: text;
+            user-select: none;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        svg{
+            margin-right: 1rem;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+    }
+  }
+
+}
