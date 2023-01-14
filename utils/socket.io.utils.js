@@ -1,5 +1,6 @@
 import { io } from 'socket.io-client';
-const ENDPOINT = "https://api.w4coder.com";
+// const ENDPOINT = "https://api.w4coder.com";
+const ENDPOINT = "http://localhost:8088";
 
 let socket;
 export const initiateSocketConnection = (token) => {
